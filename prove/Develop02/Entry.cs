@@ -1,20 +1,21 @@
 using System;
 public class Entry {
-    
-    public string Prompt{get;set;}
-    public string Answer{get;set;}
-    public string Date{get;set;}
-    
-
-    public Entry(string date ,string answer,string prompt) 
+   
+    public string _prompt;
+    public string _answer;
+    public string _date;
+   
+    public Entry(string prompt , string answer, string date) 
     {
-      Prompt = prompt;
-      Answer = answer;
-      Date = date;
-
+      _prompt = prompt;
+      _answer = answer;
+      _date = date;
+   
+   
    }
-    public override string ToString()
-    {
-        return $"{Prompt}  :{Answer}  - {Date}";
-    }
+   
+   public void Display(){
+    Console.WriteLine ($"{_prompt}  :{_answer}  - {_date}");
+  
+   }
 }

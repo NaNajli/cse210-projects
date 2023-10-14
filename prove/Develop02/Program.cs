@@ -5,11 +5,13 @@ class Program
 {
     static void Main(string[] args)
     {
-    
+    Console.WriteLine();
     Console.WriteLine("Welcome to Journal Program!!");
     Console.WriteLine(); 
-    Journal journal = new Journal(); 
+   
     PromptGenerator promptGenerator = new PromptGenerator();
+    Journal journal = new Journal(); 
+
 
     bool quit = false;
     while(!quit)
@@ -41,18 +43,19 @@ class Program
 
           else if (_entry == 3) 
           {
-            Console.WriteLine("Enter the name of the file:");
+            Console.WriteLine("Enter the name of your file: ");
             string filename = Console.ReadLine();
-            journal.SaveFile();
+            journal.LoadFile(filename);
 
           }
           else if (_entry == 4)
           {
-            Console.WriteLine("Enter the name of your file: ");
+          
+            Console.WriteLine("Enter the name of the file:");
             string filename = Console.ReadLine();
-            journal.LoadFile(filename);
-                
-
+            journal.SaveFile();
+            
+          
           }
           else if (_entry == 5)
             {
