@@ -22,22 +22,19 @@ class ListingActivity :ActivityClass
   
    public string RandomListingPrompt()
    {
-  
-   Console.WriteLine("Consider de following prompt: "); 
    Random random = new Random();
    int index = random.Next(_listingPrompt.Count);
    return _listingPrompt[index];
-
       
    }
 
   public void InputResponse()
   {
-        GetDuration();  
+   GetDuration();  
    DateTime startTime = DateTime.Now;
    DateTime endTime = startTime.AddSeconds(_timeduration);
    DateTime currentTime = DateTime.Now;
-
+   Console.WriteLine("Consider de following prompt: "); 
    do {
 
     string promptlisting = RandomListingPrompt();

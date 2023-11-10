@@ -17,6 +17,7 @@ class Program
       Console.WriteLine("2-Start reflecting activity");
       Console.WriteLine("3-Start listing activity");
       Console.WriteLine("4-Quit");
+      Console.WriteLine("5-Surprise");   
       Console.WriteLine("Select a choice from the menu: ");
     
       int answer  =  int.Parse(Console.ReadLine());
@@ -54,6 +55,17 @@ class Program
         listingActivity.InputResponse();
         listingActivity.GetMsgEnd();
      
+      }
+      else if (answer == 5)
+      {
+       Surprise surprise = new Surprise(); 
+       surprise.SetStartMsg("This activity helps you recognize the really important things in your life.","Surprise Activity");
+       surprise.GetStartMessage();
+       Console.Write("You may begin in: ");
+       surprise.GetSpinner();
+       surprise.SurpriseActivity();
+       surprise.GetMsgEnd();     
+       
       }
       else if (answer == 4)
       {
