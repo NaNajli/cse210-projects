@@ -3,6 +3,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using System.Transactions;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Xml.Schema;
 
 
 class Program
@@ -11,7 +14,9 @@ class Program
     {
         //Console.WriteLine("Hello Foundation1 World!");
         
-        
+        List <Video>_video = new List<Video>();
+      
+
         Video v1 = new Video();
         v1._playTitle = "What A Wonderful World";
         v1._author = "Jon Batiste";
@@ -46,35 +51,31 @@ class Program
         Comment c9 = new Comment("Paula","Que voz maravilhosa!!");
         Comment c10 = new Comment("Mirei","Omg, you sound so amazing! This is the best version I've heard so far! ");
    
-          v1._comments.Add(c1);
-          v1._comments.Add(c2);
-          v2._comments.Add(c3);
-          v2._comments.Add(c4);
-          v3._comments.Add(c5);
-          v3._comments.Add(c6);
-          v4._comments.Add(c7);
-          v4._comments.Add(c8);
-          v4._comments.Add(c9);
-          v4._comments.Add(c10);
+        v1._comments.Add(c1);
+        v1._comments.Add(c2);
+        v2._comments.Add(c3);
+        v2._comments.Add(c4);
+        v3._comments.Add(c5);
+        v3._comments.Add(c6);
+        v4._comments.Add(c7);
+        v4._comments.Add(c8);
+        v4._comments.Add(c9);
+        v4._comments.Add(c10);
+        
+        
+        _video.Add(v1);
+        _video.Add(v2);
+        _video.Add(v3);
+        _video.Add(v4); 
 
-          Console.WriteLine();
-          v1.GetCommentRepresentation();
-          v1.Display();
-          v1.NumberOfComments();
-          Console.WriteLine();
-          v2.GetCommentRepresentation();
-          v2.Display();
-          v2.NumberOfComments();
-          Console.WriteLine();
-          v3.GetCommentRepresentation();
-          v3.Display();
-          v3.NumberOfComments();
-          Console.WriteLine();
-          v4.GetCommentRepresentation();
-          v4.Display();
-          v4.NumberOfComments();
-          Console.WriteLine();    
-
-         
-         
+          
+        foreach (Video v in _video)
+        {
+           Console.WriteLine();
+           v.GetCommentRepresentation();
+           v.Display();
+           v.NumberOfComments();  
+        }
+        //Console.WriteLine($"The total of comments are: {_totalcomment}");      
+             
 }};
