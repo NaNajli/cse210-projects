@@ -46,4 +46,10 @@ public class Product
     {
       return _quantity;
     }
+    public int GetTotalPrice()
+    {
+        int total = _price * _quantity;
+        return total;
+    }
+   
 }
